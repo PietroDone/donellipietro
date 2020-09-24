@@ -54,30 +54,30 @@ $pagination-active-border-color: $secondary;
 /* -------------------------------Form-------------------------------- */
 
 // Impostazioni varie
-$input-height: 55px;
+$input-height: 60px;
 
 // Color
-$input-color: $text-color;
+$input-color: #777777;
 $input-placeholder-color: lighten($text-color, 30%);
 $input-plaintext-color: lighten($text-color, 30%);
 
 // Checkbox
 $checkbox-bg-color: transparent;
-$checkbox-checked-bg-color: $secondary;
+$checkbox-checked-bg-color: $primary;
 $checkbox-border-color: $primary;
-$checkbox-checked-border-color: $secondary;
+$checkbox-checked-border-color: $primary;
 
 // Background
-$input-bg: transparent;
-$input-focus-bg: transparent;
+$input-bg: #363737;
+$input-focus-bg: #363737;
 
 // Border
-$input-border-color: $primary;
-$input-focus-border-color: $primary;
+$input-border-color: transparent;
+$input-focus-border-color: transparent;
 
 // Shadow
-$input-box-shadow: inset 0 1px 1px rgba($light, 0.075);
-$input-focus-box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+$input-box-shadow: 0px 3px 4px 0px rgba(0, 12, 29, 0.06);
+$input-focus-box-shadow: 0px 3px 4px 0px rgba(0, 12, 29, 0.1);
 
 /* ------------------------------Ueppy-------------------------------- */
 

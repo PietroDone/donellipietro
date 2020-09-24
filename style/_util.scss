@@ -36,9 +36,17 @@ form {
 	.form-group {
 		margin-bottom: 20px;
 		position: relative;
+
 		label {
-			margin-bottom: 5px;
+			margin-bottom: 14px;
 			color: $text-color;
+			font-size: 15px;
+			text-transform: uppercase;
+		}
+		input,
+		textarea {
+			font-weight: 400;
+			border-radius: 3px;
 		}
 		.icona {
 			content: " ";
