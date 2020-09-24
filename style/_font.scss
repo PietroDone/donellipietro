@@ -2,19 +2,19 @@
 
 /* -------------------------Font del template------------------------- */
 
-$title-font: "Roboto Condensed", sans-serif;
-$text-font: "Dosis", sans-serif;
+$title-font: "Poppins", sans-serif;
+$text-font: "Poppins", sans-serif;
 
 /* ------------------------Variabili bootstrap------------------------ */
 
 // Titoli
 $headings-font-family: $title-font;
-$headings-font-weight: 400;
-$headings-line-height: 1.1;
+$headings-font-weight: 700;
+$headings-line-height: 1.2;
 $headings-color: $title-color;
 
 // Testi
-$font-base: 20px; // 18px = 1.25rem
+$font-base: 16px; // 18px = 1.25rem
 $font-family-sans-serif: $text-font;
 $line-height-base: 1.4;
 $body-color: $text-color;
