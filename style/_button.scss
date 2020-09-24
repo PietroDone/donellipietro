@@ -1,15 +1,17 @@
 $btn-small: false;
-$btn-big: false;
-$btn-reverse: false;
+$btn-big: true;
+$btn-reverse: true;
 
 $btn-primary: true;
-$btn-secondary: true;
+$btn-secondary: false;
 $btn-tertiary: false;
 
 .btn {
-	text-transform: uppercase;
-	padding: 16px;
-	padding-bottom: 14px;
+	padding: 16px 40px;
+	padding-bottom: 18px;
+	border-radius: 4px;
+	border-width: 2px;
+	border-style: solid;
 	@if ($btn-small) {
 		&.btn-small {
 			padding: 12px;
@@ -18,8 +20,9 @@ $btn-tertiary: false;
 	}
 	@if ($btn-big) {
 		&.btn-big {
-			padding: 20px;
+			padding: 16px 70px;
 			padding-bottom: 18px;
+			font-size: 20px;
 		}
 	}
 }
@@ -30,9 +33,9 @@ $btn-tertiary: false;
 		border-color: $primary;
 		color: #fff;
 		&:hover {
-			background-color: $primary-dark;
-			border-color: $primary-dark;
-			color: #fff;
+			background-color: transparent;
+			border-color: $primary;
+			color: $primary;
 		}
 		@if ($btn-reverse) {
 			&.btn-reverse {
