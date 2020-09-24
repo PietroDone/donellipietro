@@ -1,0 +1,28 @@
+@mixin tra-five {
+	transition: 0.4s;
+}
+
+@mixin href-hide {
+	text-indent: -450%;
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 14px;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+	z-index: 1;
+}
+
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin img-cover {
+	max-height: 100vh;
+	object-fit: cover;
+	object-position: center;
+}

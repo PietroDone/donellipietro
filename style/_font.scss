@@ -1,0 +1,89 @@
+@import "colori";
+
+/* -------------------------Font del template------------------------- */
+
+$title-font: "Roboto Condensed", sans-serif;
+$text-font: "Dosis", sans-serif;
+
+/* ------------------------Variabili bootstrap------------------------ */
+
+// Titoli
+$headings-font-family: $title-font;
+$headings-font-weight: 400;
+$headings-line-height: 1.1;
+$headings-color: $title-color;
+
+// Testi
+$font-base: 20px; // 18px = 1.25rem
+$font-family-sans-serif: $text-font;
+$line-height-base: 1.4;
+$body-color: $text-color;
+
+// Small
+$font-small: 15px;
+
+// Link
+$link-color: $a-color;
+$link-hover-color: $a-hover-color;
+$link-hover-decoration: none !default;
+
+/* ----------------------Responsive font size--------------------- */
+
+// Attivare RFS?
+$enable-responsive-font-sizes: true;
+
+// Font size base in rem o px (sotto il quale RFS non ridimensione i font)
+$rfs-base-font-size: 1.25rem !default;
+$rfs-font-size-unit: rem !default;
+
+// Breakpoint sotto il quale RFS entra in funzione
+$rfs-breakpoint: 1200px !default;
+$rfs-breakpoint-unit: px !default;
+
+// Fattore d'intervento (aumentare per avere maggiore ridimensionamento)
+$rfs-factor: 10 !default;
+
+/* ----------------------Classi per gestione font--------------------- */
+
+html,
+body {
+	font-size: $font-base;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	margin-bottom: 0;
+}
+
+span,
+small {
+	font-size: inherit;
+	font-weight: inherit;
+	color: inherit;
+	text-decoration: none;
+	text-transform: none;
+}
+
+/* ---------------------------Template Text--------------------------- */
+
+.template-text {
+	h2 {
+		margin-top: 30px;
+		margin-bottom: 10px;
+	}
+	h3 {
+		margin-bottom: 5px;
+	}
+	hr {
+		background-color: $secondary;
+	}
+	ul {
+		li::before {
+			content: "\f178" !important;
+			//color: $secondary!important;
+		}
+	}
+}

@@ -1,0 +1,155 @@
+.hamburger {
+	.hamburger-box {
+		.hamburger-inner,
+		.hamburger-inner::before,
+		.hamburger-inner::after {
+			//background-color: ;
+			width: 30px;
+			height: 1px !important;
+		}
+	}
+	.hamburger-label {
+		margin-left: 10px;
+		font-size: $font-small;
+		text-transform: uppercase;
+	}
+}
+
+// Lista con icone FA
+.template-text ul,
+ul.faw-list {
+	margin: 0 0 10px 2px;
+	padding: 0;
+	list-style: none;
+	li {
+		position: relative;
+		padding-left: 23px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	li::before {
+		font-family: "Font Awesome 5 Pro";
+		content: "\f061";
+		position: absolute;
+		left: 0;
+		width: 20px;
+		text-align: center;
+	}
+	li.tel::before {
+		content: "\f095";
+	}
+	li.mail::before {
+		content: "\f0e0";
+	}
+	li.pin::before {
+		content: "\f3c5";
+	}
+}
+
+// Owl-carousel
+.owl-carousel {
+	position: relative;
+	.owl-stage-outer {
+		.owl-stage {
+			.owl-item {
+				.item {
+					height: auto;
+				}
+			}
+		}
+	}
+	.owl-nav {
+		margin-top: 0;
+		position: absolute;
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		bottom: 50%;
+		left: 0;
+		transform: translateY(50%);
+		padding: 0 20px;
+		button {
+			&:hover {
+				background-color: transparent !important;
+			}
+			//&.owl-prev {}
+			//&.owl-next {}
+			img {
+				height: 20px;
+			}
+		}
+	}
+	.owl-dots {
+		position: absolute;
+		bottom: 20px;
+		left: 0;
+		width: 100%;
+		width: 100%;
+		height: 20px;
+		display: flex;
+		flex-direction: row;
+		justify-content: center; //flex-end, flex-start
+		align-items: center;
+		.owl-dot {
+			span {
+				width: 8px !important;
+				height: 8px !important;
+				background: $light;
+				margin: 0 8px;
+				@include tra-five;
+			}
+			&:hover span {
+				background: $secondary;
+			}
+			&.active span {
+				background: $secondary;
+				width: 12px !important;
+				height: 12px !important;
+			}
+		}
+	}
+}
+
+// Lightgallery
+.lightgallery {
+	position: relative;
+	.gallery {
+		display: flex;
+		flex-wrap: wrap;
+		position: relative;
+		a {
+			flex: 0 0 100%;
+			display: none;
+			&:nth-child(-n + 1) {
+				display: block;
+			}
+			&:first-child {
+				display: block;
+				.image {
+					z-index: 1;
+				}
+				&::after {
+					content: "";
+					width: 110px;
+					height: 28px;
+					max-width: 100%;
+					max-height: 100%;
+					background-image: url("/img/btn-gallery.svg");
+					background-color: #fff;
+					background-repeat: no-repeat;
+					background-position: center center;
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					z-index: 2;
+				}
+			}
+			&:first-child:last-child {
+				&::after {
+					display: none;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,305 @@
+// Container-1920
+.container-fluid-1920 {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	.container-1920 {
+		width: 100%;
+		max-width: 1920px;
+	}
+}
+
+// Breadcrumb
+.breadcrumb {
+	margin-top: 20px;
+	font-size: $font-small;
+	a {
+		color: $breadcrumb-a-color;
+		text-decoration: $breadcrumb-a-decoration;
+		&:hover {
+			color: $breadcrumb-hover-a-color;
+			text-decoration: $breadcrumb-hover-a-decoration;
+		}
+	}
+	@include media-breakpoint-down(sm) {
+		display: none !important;
+	}
+}
+
+// Pagination
+.pagination {
+	margin-bottom: 0;
+}
+
+// Form
+form {
+	.form-group {
+		margin-bottom: 20px;
+		position: relative;
+		label {
+			margin-bottom: 5px;
+			color: $text-color;
+		}
+		.icona {
+			content: " ";
+			display: block;
+			position: absolute;
+			right: 20px;
+			bottom: $input-height;
+			transform: translateY(calc(50% + 27.5px)); // + $input-height/2
+			color: $text-color;
+			i {
+				margin: 0;
+				line-height: 1;
+				display: block;
+				font-size: 20px;
+			}
+		}
+		select.form-control {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			background-color: $input-bg;
+			background-image: url("/img/arrow-down.png");
+			background-position-x: calc(100% - 20px + 5px);
+			background-position-y: calc(50%);
+			background-repeat: no-repeat;
+		}
+		textarea {
+			height: 233px;
+			padding: 15px;
+			padding-top: 10px;
+			resize: none;
+		}
+		.btn {
+			float: right;
+			margin-top: 20px;
+		}
+		.custom-checkbox label {
+			font-size: $font-small;
+			line-height: 35px;
+			text-transform: none;
+			padding-left: 10px;
+			cursor: pointer;
+			&::before {
+				background-color: $checkbox-bg-color;
+				border: 1px solid $checkbox-border-color;
+				width: 25px;
+				height: 25px;
+			}
+			&::after {
+				width: 25px;
+				height: 25px;
+			}
+			a {
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+		.custom-control-input:checked ~ .custom-control-label::before {
+			background-color: $checkbox-checked-bg-color;
+			border-color: $checkbox-checked-border-color;
+			background-image: none;
+		}
+		.custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
+			background-image: none;
+		}
+	}
+}
+
+// Ueppy
+.ueppy {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: $ueppy-bg-color;
+	color: $ueppy-color;
+	font-size: $ueppy-font-size;
+	.int {
+		align-items: center;
+		justify-content: space-between;
+		.sx {
+			p {
+				margin-bottom: 0;
+			}
+			a {
+				color: $ueppy-link-color;
+			}
+			a:hover {
+				text-decoration: underline;
+				color: $ueppy-link-hover-color;
+			}
+		}
+		.dx {
+			display: flex;
+			align-items: center;
+			.logo {
+				width: 105px;
+				height: 20.7px;
+				margin-left: 7px;
+				background-image: url($ueppy-logo-url);
+				img {
+					opacity: 0;
+				}
+			}
+		}
+		@include media-breakpoint-down(md) {
+			flex-direction: column;
+			div {
+				padding: 5px 0;
+				text-align: center;
+			}
+		}
+	}
+	@include media-breakpoint-down(md) {
+		.row {
+			justify-content: center;
+		}
+	}
+}
+
+// Utility per z-index, posizione e title-font/text-font
+.z-1 {
+	z-index: 1;
+}
+
+.z-2 {
+	z-index: 2;
+}
+
+.z-3 {
+	z-index: 3;
+}
+
+.z-4 {
+	z-index: 4;
+}
+
+.top-0 {
+	top: 0;
+}
+
+.right-0 {
+	right: 0;
+}
+
+.bottom-0 {
+	bottom: 0;
+}
+
+.left-0 {
+	left: 0;
+}
+
+.title-font {
+	font-family: $title-font;
+}
+
+.text-font {
+	font-family: $text-font;
+}
+
+// Fix lightGallery dentro a modal BS
+.lg-backdrop {
+	z-index: 1050 !important;
+}
+
+// Varie
+:focus {
+	outline: 0 !important;
+}
+
+html,
+body {
+	height: 100%;
+}
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+a {
+	@include tra-five;
+}
+.href-hide {
+	@include href-hide;
+}
+
+.nopad {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+.gfull {
+	width: 100%;
+}
+
+// Regole pagina di prova
+.header-esempio {
+	background-color: $primary;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	h1 {
+		color: #fff;
+	}
+}
+.main-esempio {
+	.blocco {
+		border-top: 10px solid #ccc;
+		&:first-child {
+			border: none;
+		}
+		padding-top: 30px;
+		padding-bottom: 30px;
+		//&.blocco-testo{}
+		//&.blocco-pagination{}
+		&.blocco-bottoni {
+			.btn {
+				margin-bottom: 10px;
+				margin-right: 10px;
+				&.btn-small {
+					@if ($btn-small == false) {
+						display: none;
+					}
+				}
+				&.btn-big {
+					@if ($btn-big == false) {
+						display: none;
+					}
+				}
+				&.btn-reverse {
+					@if ($btn-reverse == false) {
+						display: none;
+					}
+				}
+				&.btn-primary {
+					@if ($btn-primary == false) {
+						display: none;
+					}
+				}
+				&.btn-secondary {
+					@if ($btn-secondary == false) {
+						display: none;
+					}
+				}
+				&.btn-tertiary {
+					@if ($btn-tertiary == false) {
+						display: none;
+					}
+				}
+			}
+		}
+		//&.blocco-form {}
+	}
+	.code {
+		font-family: monospace;
+		color: $secondary;
+		display: inline-block;
+		margin-bottom: 20px;
+		padding: 10px;
+		border: 1px solid $secondary;
+		margin-right: 10px;
+	}
+	h2 {
+		margin-bottom: 20px;
+	}
+}

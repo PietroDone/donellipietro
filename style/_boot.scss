@@ -1,0 +1,91 @@
+/* -----------------------Impostazioni generali----------------------- */
+
+@import "font";
+
+// Gliglia di bootstrap
+$grid-gutter-width: 20px;
+
+//Bordi
+$border-radius: 0;
+$border-radius-lg: 0;
+$border-radius-sm: 0;
+
+/* ----------------------------Breadcrumb----------------------------- */
+
+// Color
+$breadcrumb-a-color: white;
+$breadcrumb-hover-a-color: white;
+$breadcrumb-divider-color: white;
+$breadcrumb-active-color: white;
+
+//Link decoration
+$breadcrumb-a-decoration: none;
+$breadcrumb-hover-a-decoration: underline;
+
+//Divider
+$breadcrumb-divider: quote("•"); //quote("|");
+
+// Background
+$breadcrumb-bg: transparent;
+
+//Margini e padding
+$breadcrumb-padding-y: 0;
+$breadcrumb-padding-x: 0;
+$breadcrumb-item-padding: 5px;
+$breadcrumb-margin-bottom: 0;
+
+/* ----------------------------Pagination----------------------------- */
+
+// Color
+$pagination-color: $primary;
+$pagination-hover-color: $secondary;
+$pagination-active-color: $secondary;
+
+// Background
+$pagination-bg: transparent;
+$pagination-hover-bg: transparent;
+$pagination-active-bg: transparent;
+
+// Border
+$pagination-border-color: $primary;
+$pagination-hover-border-color: $secondary;
+$pagination-active-border-color: $secondary;
+
+/* -------------------------------Form-------------------------------- */
+
+// Impostazioni varie
+$input-height: 55px;
+
+// Color
+$input-color: $text-color;
+$input-placeholder-color: lighten($text-color, 30%);
+$input-plaintext-color: lighten($text-color, 30%);
+
+// Checkbox
+$checkbox-bg-color: transparent;
+$checkbox-checked-bg-color: $secondary;
+$checkbox-border-color: $primary;
+$checkbox-checked-border-color: $secondary;
+
+// Background
+$input-bg: transparent;
+$input-focus-bg: transparent;
+
+// Border
+$input-border-color: $primary;
+$input-focus-border-color: $primary;
+
+// Shadow
+$input-box-shadow: inset 0 1px 1px rgba($light, 0.075);
+$input-focus-box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+
+/* ------------------------------Ueppy-------------------------------- */
+
+$ueppy-font-size: $font-small;
+$ueppy-color: #fff;
+$ueppy-link-color: $secondary;
+$ueppy-link-hover-color: $secondary;
+$ueppy-bg-color: $primary;
+$ueppy-logo-url: "/img/util/ueppy-credits-orange-white.svg"; // white | orange-black
+
+@import "bootstrap/scss/bootstrap.scss";

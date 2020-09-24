@@ -1,0 +1,100 @@
+$btn-small: false;
+$btn-big: false;
+$btn-reverse: false;
+
+$btn-primary: true;
+$btn-secondary: true;
+$btn-tertiary: false;
+
+.btn {
+	text-transform: uppercase;
+	padding: 16px;
+	padding-bottom: 14px;
+	@if ($btn-small) {
+		&.btn-small {
+			padding: 12px;
+			padding-bottom: 10px;
+		}
+	}
+	@if ($btn-big) {
+		&.btn-big {
+			padding: 20px;
+			padding-bottom: 18px;
+		}
+	}
+}
+
+@if ($btn-primary) {
+	.btn-primary {
+		background-color: $primary;
+		border-color: $primary;
+		color: #fff;
+		&:hover {
+			background-color: $primary-dark;
+			border-color: $primary-dark;
+			color: #fff;
+		}
+		@if ($btn-reverse) {
+			&.btn-reverse {
+				background-color: transparent;
+				border-color: $primary;
+				color: $primary;
+				&:hover {
+					background-color: $primary;
+					border-color: $primary;
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+
+@if ($btn-secondary) {
+	.btn-secondary {
+		background-color: $secondary;
+		border-color: $secondary;
+		color: #fff;
+		&:hover {
+			background-color: $secondary-dark;
+			border-color: $secondary-dark;
+			color: #fff;
+		}
+		@if ($btn-reverse) {
+			&.btn-reverse {
+				background-color: transparent;
+				border-color: $secondary;
+				color: $secondary;
+				&:hover {
+					background-color: $secondary;
+					border-color: $secondary;
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+
+@if ($btn-tertiary) {
+	.btn-tertiary {
+		background-color: $tertiary;
+		border-color: $tertiary;
+		color: #fff;
+		&:hover {
+			background-color: $tertiary-dark;
+			border-color: $tertiary-dark;
+			color: #fff;
+		}
+		@if ($btn-reverse) {
+			&.btn-reverse {
+				background-color: transparent;
+				border-color: $tertiary;
+				color: $tertiary;
+				&:hover {
+					background-color: $tertiary;
+					border-color: $tertiary;
+					color: #fff;
+				}
+			}
+		}
+	}
+}
