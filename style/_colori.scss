@@ -1,22 +1,22 @@
 // Colore primario
-$primary: #4d4a49;
+$primary: rgb(247, 176, 49);
 $primary-light: lighten($primary, 5%);
 $primary-dark: darken($primary, 5%);
 
 // Colore secondario
-$secondary: #ff6d05;
-$secondary-light: lighten($secondary, 5%);
-$secondary-dark: darken($secondary, 5%);
+$secondary: rgb(47, 49, 49);
+$secondary-light: rgb(60, 60, 60);
+$secondary-dark: rgb(43, 44, 44);
 
 // Colore teziario
-//$tertiary: #ff6d05;
-//$tertiary-light: lighten($secondary, 5%);
-//$tertiary-dark: darken($secondary, 5%);
+// $tertiary: rgb(43,43,43);
+// $tertiary-light: lighten($secondary, 5%);
+// $tertiary-dark: darken($secondary, 5%);
 
 $light: #efefef;
 
 // Colore testi
-$title-color: $primary;
-$text-color: #000;
-$a-color: $secondary;
-$a-hover-color: $secondary-dark;
+$title-color: rgb(204, 204, 204);
+$text-color: rgb(159, 159, 159);
+$a-color: $text-color;
+$a-hover-color: $primary;
