@@ -1,4 +1,4 @@
-$btn-small: false;
+$btn-small: true;
 $btn-big: true;
 $btn-reverse: true;
 
@@ -14,7 +14,7 @@ $btn-tertiary: false;
 	border-style: solid;
 	@if ($btn-small) {
 		&.btn-small {
-			padding: 12px;
+			padding: 8px;
 			padding-bottom: 10px;
 		}
 	}
