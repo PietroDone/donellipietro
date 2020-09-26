@@ -1,9 +1,10 @@
 .hamburger {
+	padding: 0;
 	.hamburger-box {
 		.hamburger-inner,
 		.hamburger-inner::before,
 		.hamburger-inner::after {
-			//background-color: ;
+			background-color: white;
 			width: 30px;
 			height: 1px !important;
 		}
@@ -12,6 +13,7 @@
 		margin-left: 10px;
 		font-size: $font-small;
 		text-transform: uppercase;
+		display: none;
 	}
 }
 
