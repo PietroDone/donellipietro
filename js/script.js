@@ -1,12 +1,44 @@
 $(document).ready(function () {
-	var swiper = new Swiper("#vertical-slider", {
+	var swiperPage = new Swiper("#vertical-slider", {
 		direction: "vertical",
 		mousewheel: true,
 		keyboard: true,
+	});
+
+	var swiperChiSono = new Swiper("#chiSono-slider", {
+		keyboard: true,
+		//mousewheel: true,
+		slidesPerView: "auto",
+		spaceBetween: 50,
 		pagination: {
-			el: ".swiper-pagination",
+			el: ".swiper-pagination-chiSono",
 			clickable: true,
 		},
+		navigation: {
+			nextEl: ".swiper-button-next",
+		},
+	});
+
+	function goToPage(numberPage) {
+		swiperChiSono.slideTo(numberPage, 1000, false);
+	}
+
+	var buttonPrev = $("#chiSono-slider .swiper-button-prev");
+	var buttonNext = $("#chiSono-slider .swiper-button-next");
+	buttonNext.on("click", function () {
+		if (buttonNext.hasClass("swiper-button-disabled")) {
+			buttonNext.fadeOut();
+			buttonPrev.fadeIn();
+		}
+	});
+	buttonPrev.on("click", function () {
+		goToPage(0);
+		buttonPrev.fadeOut();
+		buttonNext.fadeIn();
+	});
+
+	$(document).ready(function () {
+		$("#lightgallery-passioni").lightGallery();
 	});
 
 	var barraMenu = $(".main-menu");
