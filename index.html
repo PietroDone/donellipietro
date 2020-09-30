@@ -33,262 +33,248 @@
 	</head>
 
 	<body>
-		<div class="page swiper-container" id="vertical-slider">
-			<div class="swiper-wrapper">
-				<header class="swiper-slide" id="header">
-					<nav class="container-fluid main-menu">
-						<div class="container">
-							<div class="row">
-								<div class="col-md-12 int">
-									<div class="sx">
-										<button
-											class="hamburger hamburger--spin d-flex align-items-center"
-											type="button"
-										>
-											<span class="hamburger-box">
-												<span class="hamburger-inner"></span>
-											</span>
-											<span class="hamburger-label text-uppercase">Menu</span>
-										</button>
-									</div>
-									<div class="dx">
-										<ul class="inline-menu">
-											<li class="active"><a href="#header">Home</a></li>
-											<li><a href="#chi-sono">Chi sono</a></li>
-											<li><a href="#competenze">Competenze</a></li>
-											<li><a href="#lavori">Ultimi lavori</a></li>
-										</ul>
-										<a href="#contattami" class="btn btn-primary btn-small btn-reverse"
-											>Contattami</a
-										>
-									</div>
-								</div>
-							</div>
-						</div>
-					</nav>
-					<div class="container-fluid full-hero">
-						<div class="container">
-							<div class="row">
-								<div class="col-md-12 int">
-									<div class="titolo">
-										<h1>Sono Pietro</h1>
-										<p class="h4">
-											Studente Universitario e <br />
-											Frontend Developer
-										</p>
-										<a href="#contattami" class="btn btn-primary btn-big">Contattami</a>
-									</div>
-									<div class="image">
-										<img
-											src="./img/pietro_1x.jpg"
-											srcset="
-												./img/pietro_1x.jpg 1x,
-												./img/pietro_2x.jpg 2x,
-												./img/pietro_3x.jpg 3x
-											"
-											alt="Questo sono io"
-										/>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</header>
-
-				<section class="container-fluid swiper-slide" id="chi-sono">
+		<div class="page" id="fullpage">
+			<header class="section" id="header">
+				<nav class="container-fluid main-menu">
 					<div class="container">
 						<div class="row">
 							<div class="col-md-12 int">
-								<div class="swiper-container" id="chiSono-slider">
-									<div class="swiper-wrapper">
-										<div class="swiper-slide" id="about-me">
-											<div class="row">
-												<div class="col-md-12 top">
-													<h1 class="titolo-sottolineato">About me</h1>
-												</div>
-												<div class="col-md-5 sx">
-													<img
-														class="img-fluid cornice-immagine"
-														src="./img/pietro_1x.jpg"
-														srcset="
-															./img/pietro_1x.jpg 1x,
-															./img/pietro_2x.jpg 2x,
-															./img/pietro_3x.jpg 3x
-														"
-														alt="Questo sono io"
-													/>
-												</div>
-												<div class="col-md-6 offset-md-1 dx">
-													<p>
-														Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-														Veritatis rerum accusantium aliquid laboriosam inventore cumque
-														magni molestiae quod quasi officiis alias itaque minus, in,
-														repellat, est explicabo atque. Eligendi, aliquid.
-													</p>
-													<p>
-														Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-														Veritatis rerum accusantium aliquid laboriosam inventore cumque
-														magni molestiae quod quasi officiis alias itaque minus, in,
-														repellat, est explicabo atque. Eligendi, aliquid.
-													</p>
-													<p>
-														Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-														Veritatis rerum accusantium aliquid laboriosam inventore cumque
-														magni molestiae quod quasi officiis alias itaque minus, in,
-														repellat, est explicabo atque. Eligendi, aliquid.
-													</p>
-													<div class="bottoni">
-														<a href="#contattami" class="btn btn-primary">Contattami</a>
-														<a href="#" class="btn btn-primary btn-reverse"
-															>Scarica il CV</a
-														>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="swiper-slide" id="percorso-studi">
-											<div class="row">
-												<div class="col-md-12">
-													<h2 class="titolo-sottolineato">Percorso di studi</h2>
-													<ul class="percorso">
-														<li class="complete">
-															<div class="int">
-																<h4>Licenza media</h4>
-																<small>Istittuto comprensivo Igino Bertesi</small>
-																<em>10</em>
-															</div>
-														</li>
-														<li class="complete">
-															<div class="int">
-																<h4>Diploma superiore</h4>
-																<small>I.I.S Galileo Galilei Crema</small>
-																<p>
-																	Liceo Scientifico Tecnologico - Opzione Scienze
-																	Applicate
-																</p>
-																<em>100 e Lode</em>
-															</div>
-														</li>
-														<li>
-															<div class="int">
-																<h4>Laurea Triennale</h4>
-																<small
-																	><img
-																		src="./img/polimi.png"
-																		alt="Politecnico di Milano"
-																	/>
-																	Politecnico di Milano</small
-																>
-																<p>Ingegneria Matematica</p>
-															</div>
-														</li>
-														<li>
-															<div class="int">
-																<h4>Laurea Magistrale</h4>
-																<small>Politecnico di Milano</small>
-																<p>Mathematical Engineering - Statistical Learnign</p>
-															</div>
-														</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-										<div class="swiper-slide" id="passioni">
-											<div class="row">
-												<div class="col-md-12">
-													<h2 class="titolo-sottolineato">Le mie passioni</h2>
-													<p>Questo è ciò che mi piace fare</p>
-													<div class="lightgallery">
-														<div class="gallery" id="lightgallery-passioni">
-															<a href="https://via.placeholder.com/200x200">
-																<img
-																	class="image"
-																	src="https://via.placeholder.com/300x200"
-																	alt="./"
-																	title="./"
-																/>
-															</a>
-															<a href="https://via.placeholder.com/200x200">
-																<img
-																	class="image"
-																	src="https://via.placeholder.com/200x200"
-																	alt="./"
-																	title="./"
-																/>
-															</a>
-															<a href="https://via.placeholder.com/200x300">
-																<img
-																	class="image"
-																	src="https://via.placeholder.com/300x200"
-																	alt="./"
-																	title="./"
-																/>
-															</a>
-															<a href="https://via.placeholder.com/200x200">
-																<img
-																	class="image"
-																	src="https://via.placeholder.com/200x200"
-																	alt="./"
-																	title="./"
-																/>
-															</a>
-															<a href="https://via.placeholder.com/200x200">
-																<img
-																	class="image"
-																	src="https://via.placeholder.com/400x200"
-																	alt="./"
-																	title="./"
-																/>
-															</a>
-															<a href="https://via.placeholder.com/200x300">
-																<img
-																	class="image"
-																	src="https://via.placeholder.com/200x200"
-																	alt="./"
-																	title="./"
-																/>
-															</a>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="swiper-button-prev"></div>
-									<div class="swiper-button-next"></div>
-									<div class="swiper-pagination-chiSono">
-										<i class="fal fa-angle-right"></i>
-									</div>
+								<div class="sx">
+									<button class="hamburger hamburger--spin d-flex align-items-center" type="button">
+										<span class="hamburger-box">
+											<span class="hamburger-inner"></span>
+										</span>
+										<span class="hamburger-label text-uppercase">Menu</span>
+									</button>
+								</div>
+								<div class="dx">
+									<ul class="inline-menu">
+										<li class="active"><a href="#header">Home</a></li>
+										<li><a href="#chi-sono">Chi sono</a></li>
+										<li><a href="#competenze">Competenze</a></li>
+										<li><a href="#lavori">Ultimi lavori</a></li>
+									</ul>
+									<a href="#contattami" class="btn btn-primary btn-small btn-reverse">Contattami</a>
 								</div>
 							</div>
 						</div>
 					</div>
-				</section>
-				<section class="container-fluid swiper-slide">
+				</nav>
+				<div class="container-fluid full-hero">
 					<div class="container">
 						<div class="row">
-							<div class="col-md-12">sezione 2</div>
-						</div>
-					</div>
-				</section>
-				<section class="container-fluid swiper-slide">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-12">sezione 3</div>
-						</div>
-					</div>
-				</section>
-				<footer class="swiper-slide">
-					<div class="container-fluid">
-						<div class="container">
-							<div class="row">
-								<div class="col-md-12">footer</div>
+							<div class="col-md-12 int">
+								<div class="titolo">
+									<h1>Sono Pietro</h1>
+									<p class="h4">
+										Studente Universitario e <br />
+										Frontend Developer
+									</p>
+									<a href="#contattami" class="btn btn-primary btn-big">Contattami</a>
+								</div>
+								<div class="image">
+									<img
+										src="./img/pietro_1x.jpg"
+										srcset="./img/pietro_1x.jpg 1x, ./img/pietro_2x.jpg 2x, ./img/pietro_3x.jpg 3x"
+										alt="Questo sono io"
+									/>
+								</div>
 							</div>
 						</div>
 					</div>
-				</footer>
-			</div>
-			<div class="swiper-pagination"></div>
+				</div>
+			</header>
+
+			<section class="container-fluid section" id="chi-sono">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 int">
+							<div class="swiper-container" id="chiSono-slider">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide" id="about-me">
+										<div class="row">
+											<div class="col-md-12 top">
+												<h1 class="titolo-sottolineato">About me</h1>
+											</div>
+											<div class="col-md-5 sx">
+												<img
+													class="img-fluid cornice-immagine"
+													src="./img/pietro_1x.jpg"
+													srcset="
+														./img/pietro_1x.jpg 1x,
+														./img/pietro_2x.jpg 2x,
+														./img/pietro_3x.jpg 3x
+													"
+													alt="Questo sono io"
+												/>
+											</div>
+											<div class="col-md-6 offset-md-1 dx">
+												<p>
+													Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis
+													rerum accusantium aliquid laboriosam inventore cumque magni
+													molestiae quod quasi officiis alias itaque minus, in, repellat, est
+													explicabo atque. Eligendi, aliquid.
+												</p>
+												<p>
+													Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis
+													rerum accusantium aliquid laboriosam inventore cumque magni
+													molestiae quod quasi officiis alias itaque minus, in, repellat, est
+													explicabo atque. Eligendi, aliquid.
+												</p>
+												<p>
+													Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis
+													rerum accusantium aliquid laboriosam inventore cumque magni
+													molestiae quod quasi officiis alias itaque minus, in, repellat, est
+													explicabo atque. Eligendi, aliquid.
+												</p>
+												<div class="bottoni">
+													<a href="#contattami" class="btn btn-primary">Contattami</a>
+													<a href="#" class="btn btn-primary btn-reverse">Scarica il CV</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide" id="percorso-studi">
+										<div class="row">
+											<div class="col-md-12">
+												<h2 class="titolo-sottolineato">Percorso di studi</h2>
+												<ul class="percorso">
+													<li class="complete">
+														<div class="int">
+															<h4>Licenza media</h4>
+															<small>Istittuto comprensivo Igino Bertesi</small>
+															<em>10</em>
+														</div>
+													</li>
+													<li class="complete">
+														<div class="int">
+															<h4>Diploma superiore</h4>
+															<small>I.I.S Galileo Galilei Crema</small>
+															<p>
+																Liceo Scientifico Tecnologico - Opzione Scienze
+																Applicate
+															</p>
+															<em>100 e Lode</em>
+														</div>
+													</li>
+													<li>
+														<div class="int">
+															<h4>Laurea Triennale</h4>
+															<small
+																><img
+																	src="./img/polimi.png"
+																	alt="Politecnico di Milano"
+																/>
+																Politecnico di Milano</small
+															>
+															<p>Ingegneria Matematica</p>
+														</div>
+													</li>
+													<li>
+														<div class="int">
+															<h4>Laurea Magistrale</h4>
+															<small>Politecnico di Milano</small>
+															<p>Mathematical Engineering - Statistical Learnign</p>
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide" id="passioni">
+										<div class="row">
+											<div class="col-md-12">
+												<h2 class="titolo-sottolineato">Le mie passioni</h2>
+												<p>Questo è ciò che mi piace fare</p>
+												<div class="lightgallery">
+													<div class="gallery" id="lightgallery-passioni">
+														<a href="https://via.placeholder.com/200x200">
+															<img
+																class="image"
+																src="https://via.placeholder.com/300x200"
+																alt="./"
+																title="./"
+															/>
+														</a>
+														<a href="https://via.placeholder.com/200x200">
+															<img
+																class="image"
+																src="https://via.placeholder.com/200x200"
+																alt="./"
+																title="./"
+															/>
+														</a>
+														<a href="https://via.placeholder.com/200x300">
+															<img
+																class="image"
+																src="https://via.placeholder.com/300x200"
+																alt="./"
+																title="./"
+															/>
+														</a>
+														<a href="https://via.placeholder.com/200x200">
+															<img
+																class="image"
+																src="https://via.placeholder.com/200x200"
+																alt="./"
+																title="./"
+															/>
+														</a>
+														<a href="https://via.placeholder.com/200x200">
+															<img
+																class="image"
+																src="https://via.placeholder.com/400x200"
+																alt="./"
+																title="./"
+															/>
+														</a>
+														<a href="https://via.placeholder.com/200x300">
+															<img
+																class="image"
+																src="https://via.placeholder.com/200x200"
+																alt="./"
+																title="./"
+															/>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-button-prev"></div>
+								<div class="swiper-button-next"></div>
+								<div class="swiper-pagination-chiSono">
+									<i class="fal fa-angle-right"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="container-fluid section">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">sezione 2</div>
+					</div>
+				</div>
+			</section>
+			<section class="container-fluid section">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">sezione 3</div>
+					</div>
+				</div>
+			</section>
+			<footer class="section">
+				<div class="container-fluid">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">footer</div>
+						</div>
+					</div>
+				</div>
+			</footer>
 		</div>
 
 		<script src="js/jquery-3.3.1.min.js"></script>

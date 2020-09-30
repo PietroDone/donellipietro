@@ -1,9 +1,10 @@
 $(document).ready(function () {
-	var swiperPage = new Swiper("#vertical-slider", {
-		direction: "vertical",
-		mousewheel: true,
-		keyboard: true,
+	$("#fullpage").fullpage({
+		//options here
+		autoScrolling: true,
+		scrollHorizontally: true,
 	});
+	$.fn.fullpage.setAllowScrolling(false);
 
 	var swiperChiSono = new Swiper("#chiSono-slider", {
 		keyboard: true,
