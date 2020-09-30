@@ -27,14 +27,28 @@ $(document).ready(function () {
 	var buttonNext = $("#chiSono-slider .swiper-button-next");
 	buttonNext.on("click", function () {
 		if (buttonNext.hasClass("swiper-button-disabled")) {
-			buttonNext.fadeOut();
-			buttonPrev.fadeIn();
+			buttonNext
+				.queue(function (next) {
+					buttonNext.addClass("rotate").dequeue();
+				})
+				.delay(400)
+				.queue(function (next) {
+					buttonNext.hide().removeClass("rotate");
+					buttonPrev.show().dequeue();
+				});
 		}
 	});
 	buttonPrev.on("click", function () {
 		goToPage(0);
-		buttonPrev.fadeOut();
-		buttonNext.fadeIn();
+		buttonPrev
+			.queue(function (next) {
+				buttonPrev.addClass("rotate").dequeue();
+			})
+			.delay(400)
+			.queue(function (next) {
+				buttonPrev.hide().removeClass("rotate");
+				buttonNext.show().dequeue();
+			});
 	});
 
 	$(document).ready(function () {

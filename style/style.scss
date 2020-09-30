@@ -327,6 +327,15 @@ section#chi-sono {
 			}
 			li {
 				position: relative;
+
+				.int {
+					@include tra-five();
+					opacity: 0.4;
+				}
+				&.complete .int {
+					opacity: 1;
+				}
+
 				&::before {
 					content: "";
 					width: 20px;
@@ -437,19 +446,37 @@ section#chi-sono {
 		.swiper-button-next {
 			background-image: none;
 			color: $primary;
+			@include tra-five();
+			transform: rotate(0);
 			&:after {
 				content: "next";
 				text-align: center;
+				width: 20px;
+				text-align: center;
+			}
+			&.rotate {
+				transform: rotate(180deg);
 			}
 		}
 		.swiper-button-prev {
 			left: auto;
-			right: 10px;
+			right: 9px;
 			color: $primary;
 			display: none;
+			@include tra-five();
+			transform: rotate(0) translate(0);
 			&:after {
 				content: "prev";
+				width: 20px;
+				text-align: center;
 			}
+			&.rotate {
+				transform: rotate(-180deg);
+				right: 11px;
+			}
+		}
+		.swiper-button-disabled {
+			opacity: 1;
 		}
 	}
 }
