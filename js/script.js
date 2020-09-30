@@ -3,8 +3,10 @@ $(document).ready(function () {
 		//options here
 		autoScrolling: true,
 		scrollHorizontally: true,
+		scrollOverflow: true,
+		scrollOverflowReset: true,
 	});
-	$.fn.fullpage.setAllowScrolling(false);
+	//$.fn.fullpage.setAllowScrolling(false);
 
 	var swiperChiSono = new Swiper("#chiSono-slider", {
 		keyboard: true,
