@@ -5,6 +5,7 @@ $(document).ready(function () {
 		scrollHorizontally: true,
 		scrollOverflow: true,
 		scrollOverflowReset: true,
+		anchors: ["home", "chi-sono", "competenze", "lavori", "contattami"],
 	});
 	//$.fn.fullpage.setAllowScrolling(false);
 
