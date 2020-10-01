@@ -1,4 +1,6 @@
 $(document).ready(function () {
+	/* ------ Gestione scorrimento sezioni -------- */
+
 	const appHeight = () => {
 		const doc = document.documentElement;
 		doc.style.setProperty("--app-height", `${window.innerHeight}px`);
@@ -8,6 +10,7 @@ $(document).ready(function () {
 
 	$("#fullpage").fullpage({
 		//options here
+		menu: "#menu",
 		autoScrolling: true,
 		scrollHorizontally: true,
 		scrollOverflow: true,
@@ -16,7 +19,8 @@ $(document).ready(function () {
 		fixedElements: ".main-menu",
 		anchors: ["home", "chi-sono", "competenze", "lavori", "contattami"],
 	});
-	//$.fn.fullpage.setAllowScrolling(false);
+
+	/* ------ Gestione slider Chi Sono -------- */
 
 	var swiperChiSono = new Swiper("#chiSono-slider", {
 		keyboard: true,
@@ -77,28 +81,7 @@ $(document).ready(function () {
 		$("#lightgallery-passioni").lightGallery();
 	});
 
-	var barraMenu = $(".main-menu");
-	$(window).on("load resize scroll", function () {
-		/* Chiusura menu al resize */
-		chiudiMenu();
-
-		/* Gestione apparizione menu */
-		if (screen && screen.width >= 768) {
-			$(".main-menu .inline-menu").slideDown();
-		} else {
-			$(".main-menu .inline-menu").slideUp();
-		}
-
-		/* Gestione fissaggio barra */
-		var scroll = $(window).scrollTop();
-		if (screen && screen.width > 200) {
-			if (scroll >= 20) {
-				barraMenu.addClass("dark");
-			} else {
-				barraMenu.removeClass("dark");
-			}
-		}
-	});
+	/* ------ Gestione immagine visore -------- */
 
 	var pietro = $(".full-hero .image img");
 	var w_p = pietro.width();
@@ -118,11 +101,13 @@ $(document).ready(function () {
 		}
 	});
 
+	/* ------ Gestione menu -------- */
+
 	// Gestione shadow menu
 	function addShadow() {
 		var bodyShadow = document.createElement("div");
 		bodyShadow.setAttribute("class", "body-shadow");
-		$("body header").append(bodyShadow);
+		$("body").append(bodyShadow);
 		$(".body-shadow").fadeIn();
 	}
 	function removeShadow() {
@@ -145,6 +130,21 @@ $(document).ready(function () {
 			$(".main-menu .inline-menu").slideUp();
 		}
 	}
+	$(".main-menu .inline-menu li").on("click", function () {
+		chiudiMenu();
+	});
+	var barraMenu = $(".main-menu");
+	$(window).on("load resize scroll", function () {
+		/* Chiusura menu al resize */
+		chiudiMenu();
+
+		/* Gestione apparizione menu */
+		if (screen && screen.width >= 768) {
+			$(".main-menu .inline-menu").slideDown();
+		} else {
+			$(".main-menu .inline-menu").slideUp();
+		}
+	});
 
 	// Trigger apertura e chiusura
 	$(document).keyup(function (e) {
