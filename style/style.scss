@@ -28,7 +28,6 @@ body {
 }
 
 .page#fullpage {
-	height: 100vh;
 	.section {
 		// Srollbar
 		@include media-breakpoint-up(md) {
@@ -50,82 +49,82 @@ body {
 
 $hBarra: 80px;
 
-header {
+.main-menu {
+	display: block;
+	position: fixed !important;
 	background-color: $secondary-dark;
-	.main-menu {
-		display: block;
-		position: fixed !important;
-		z-index: 10;
-		top: 0;
-		left: 0;
-		width: 100%;
-		&.dark {
-			background-color: $secondary-extra-dark;
-		}
-		.int {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			height: $hBarra;
-			.sx {
-				.hamburger {
-					@include media-breakpoint-up(md) {
-						display: none !important;
-					}
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	width: 100%;
+	&.dark {
+		background-color: $secondary-extra-dark;
+	}
+	.int {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: $hBarra;
+		.sx {
+			.hamburger {
+				@include media-breakpoint-up(md) {
+					display: none !important;
 				}
 			}
-			.dx {
-				display: flex;
-				align-items: center;
-				.inline-menu {
-					list-style: none;
-					margin: 0;
-					padding: 0;
-					margin-right: 30px;
-					li {
-						display: inline;
-						margin-left: 20px;
-						position: relative;
-						&:hover,
-						&.active {
-							&:before {
-								content: "";
-								height: 2px;
-								width: 30px;
-								background-color: $primary;
-								position: absolute;
-								bottom: -8px;
-								left: 0;
-							}
-							a {
-								color: $primary;
-							}
+		}
+		.dx {
+			display: flex;
+			align-items: center;
+			.inline-menu {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				margin-right: 30px;
+				li {
+					display: inline;
+					margin-left: 20px;
+					position: relative;
+					&:hover,
+					&.active {
+						&:before {
+							content: "";
+							height: 2px;
+							width: 30px;
+							background-color: $primary;
+							position: absolute;
+							bottom: -8px;
+							left: 0;
 						}
 						a {
-							color: white;
+							color: $primary;
 						}
 					}
-					@include media-breakpoint-down(sm) {
-						display: none;
-						position: fixed;
-						bottom: 50%;
-						right: 50%;
-						transform: translate(50%, 50%);
-						@include rfs(25);
-						li {
-							display: block;
-							margin-top: 25px;
-						}
+					a {
+						color: white;
+					}
+				}
+				@include media-breakpoint-down(sm) {
+					display: none;
+					position: fixed;
+					bottom: 50%;
+					right: 50%;
+					transform: translate(50%, 50%);
+					@include rfs(25);
+					li {
+						display: block;
+						margin-top: 25px;
 					}
 				}
 			}
 		}
 	}
+}
 
+header {
+	background-color: $secondary-dark;
 	.full-hero {
-		margin-top: $hBarra;
 		.int {
-			height: calc(100vh - 80px);
+			height: calc(var(--app-height) - 80px);
 			align-items: center;
 			display: flex;
 			justify-content: space-between;
@@ -134,7 +133,6 @@ header {
 				color: white;
 				position: relative;
 				z-index: 2;
-				//border: 1px solid red;
 				h1 {
 					@include rfs(70);
 					font-weight: 600;
@@ -158,7 +156,6 @@ header {
 				text-align: center;
 				position: relative;
 				z-index: 1;
-				//border: 1px solid red;
 				/* Posizionamento immagine */
 				display: flex;
 				justify-content: center;
@@ -241,12 +238,30 @@ section#chiSono {
 	#about-me {
 		//display: none;
 		width: 85%;
+		@include media-breakpoint-down(sm) {
+			width: 85%;
+			.sx {
+				display: none;
+			}
+		}
 		.dx {
 			padding-right: 80px;
+			@include media-breakpoint-down(md) {
+				padding-right: 10px;
+			}
 			.bottoni {
 				margin-top: 20px;
+				display: flex;
+				align-items: flex-start;
+				flex-wrap: wrap;
 				.btn:first-child() {
 					margin-right: 15px;
+					margin-bottom: 15px;
+				}
+				@include media-breakpoint-down(md) {
+					.contattami {
+						display: none;
+					}
 				}
 			}
 		}
@@ -260,7 +275,6 @@ section#chiSono {
 			margin-top: 60px;
 			li {
 				margin-bottom: 20px;
-				padding-right: 150px;
 				display: block;
 				small,
 				p {
@@ -311,7 +325,6 @@ section#chiSono {
 			}
 			li {
 				position: relative;
-
 				.int {
 					@include tra-five();
 					opacity: 0.4;
@@ -343,6 +356,7 @@ section#chiSono {
 			margin-top: 20px;
 			.gallery {
 				width: 815px;
+				max-width: 100%;
 				display: flex;
 				flex-wrap: wrap;
 				position: relative;
@@ -351,6 +365,15 @@ section#chiSono {
 					display: none;
 					&:nth-child(-n + 6) {
 						display: block;
+					}
+					@include media-breakpoint-down(sm) {
+						&.no-mobile {
+							display: none;
+						}
+						width: calc(100% - 5px);
+						.image {
+							width: 100%;
+						}
 					}
 					&:first-child {
 						display: block;
@@ -398,16 +421,26 @@ section#chiSono {
 			top: 0;
 			right: -3px;
 			z-index: 3;
+			@include media-breakpoint-down(sm) {
+				display: none;
+			}
 		}
 		.swiper-wrapper {
 			.swiper-slide {
-				height: calc(100vh - 50px) !important;
+				.row {
+					width: 100%;
+				}
+				&:last-child() {
+					margin-right: 0 !important;
+				}
 				padding: 50px 0;
 				width: 100%;
-				align-items: center;
 				display: flex;
-				&::-webkit-scrollbar {
-					display: none;
+				align-items: center;
+				@include media-breakpoint-down(sm) {
+					padding: 20px 0;
+					width: 100% !important;
+					align-items: flex-start;
 				}
 			}
 		}
@@ -417,6 +450,7 @@ section#chiSono {
 			flex: 1;
 			justify-content: center;
 			align-items: center;
+
 			.swiper-pagination-bullet {
 				height: 8px;
 				width: 8px;
@@ -436,7 +470,6 @@ section#chiSono {
 				content: "next";
 				text-align: center;
 				width: 20px;
-				text-align: center;
 			}
 			&.rotate {
 				transform: rotate(180deg);
@@ -461,6 +494,12 @@ section#chiSono {
 		}
 		.swiper-button-disabled {
 			opacity: 1;
+		}
+		.swiper-button-next,
+		.swiper-button-prev {
+			@include media-breakpoint-down(sm) {
+				display: none;
+			}
 		}
 	}
 }

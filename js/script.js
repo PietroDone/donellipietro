@@ -1,25 +1,43 @@
 $(document).ready(function () {
+	const appHeight = () => {
+		const doc = document.documentElement;
+		doc.style.setProperty("--app-height", `${window.innerHeight}px`);
+	};
+	window.addEventListener("resize", appHeight);
+	appHeight();
+
 	$("#fullpage").fullpage({
 		//options here
 		autoScrolling: true,
 		scrollHorizontally: true,
 		scrollOverflow: true,
 		scrollOverflowReset: true,
+		paddingTop: "80px",
+		fixedElements: ".main-menu",
 		anchors: ["home", "chi-sono", "competenze", "lavori", "contattami"],
 	});
 	//$.fn.fullpage.setAllowScrolling(false);
 
 	var swiperChiSono = new Swiper("#chiSono-slider", {
 		keyboard: true,
-		//mousewheel: true,
-		slidesPerView: "auto",
-		spaceBetween: 50,
 		pagination: {
 			el: ".swiper-pagination-chiSono",
 			clickable: true,
 		},
-		navigation: {
-			nextEl: ".swiper-button-next",
+
+		breakpoints: {
+			0: {
+				autoHeight: true,
+				slidesPerView: 1,
+			},
+			768: {
+				slidesPerView: "auto",
+				spaceBetween: 50,
+				navigation: {
+					nextEl: ".swiper-button-next",
+					prevEl: ".swiper-button-prev",
+				},
+			},
 		},
 	});
 
