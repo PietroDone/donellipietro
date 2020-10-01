@@ -433,6 +433,9 @@ section#chiSono {
 				&:last-child() {
 					margin-right: 0 !important;
 				}
+				@include media-breakpoint-up(xl) {
+					height: calc(var(--app-height) - 80px - 50px);
+				}
 				padding: 50px 0;
 				width: 100%;
 				display: flex;
