@@ -1,4 +1,4 @@
-e$(document).ready(function () {
+$(document).ready(function () {
 	/* ------ Gestione scorrimento sezioni -------- */
 
 	const appHeight = () => {
@@ -45,40 +45,96 @@ e$(document).ready(function () {
 		},
 	});
 
-	function goToPage(numberPage) {
+	function goToPageCS(numberPage) {
 		swiperChiSono.slideTo(numberPage, 1000, false);
 	}
 
-	var buttonPrev = $("#chiSono-slider .swiper-button-prev");
-	var buttonNext = $("#chiSono-slider .swiper-button-next");
-	buttonNext.on("click", function () {
-		if (buttonNext.hasClass("swiper-button-disabled")) {
-			buttonNext
+	var buttonPrevCS = $("#chiSono-slider .swiper-button-prev");
+	var buttonNextCS = $("#chiSono-slider .swiper-button-next");
+	buttonNextCS.on("click", function () {
+		if (buttonNextCS.hasClass("swiper-button-disabled")) {
+			buttonNextCS
 				.queue(function (next) {
-					buttonNext.addClass("rotate").dequeue();
+					buttonNextCS.addClass("rotate").dequeue();
 				})
 				.delay(400)
 				.queue(function (next) {
-					buttonNext.hide().removeClass("rotate");
-					buttonPrev.show().dequeue();
+					buttonNextCS.hide().removeClass("rotate");
+					buttonPrevCS.show().dequeue();
 				});
 		}
 	});
-	buttonPrev.on("click", function () {
-		goToPage(0);
-		buttonPrev
+	buttonPrevCS.on("click", function () {
+		goToPageCS(0);
+		buttonPrevCS
 			.queue(function (next) {
-				buttonPrev.addClass("rotate").dequeue();
+				buttonPrevCS.addClass("rotate").dequeue();
 			})
 			.delay(400)
 			.queue(function (next) {
-				buttonPrev.hide().removeClass("rotate");
-				buttonNext.show().dequeue();
+				buttonPrevCS.hide().removeClass("rotate");
+				buttonNextCS.show().dequeue();
 			});
 	});
 
 	$(document).ready(function () {
 		$("#lightgallery-passioni").lightGallery();
+	});
+
+	/* ------ Gestione slider portfolio -------- */
+
+	var swiperPortfolio = new Swiper("#portfolio-slider", {
+		keyboard: true,
+		pagination: {
+			el: ".swiper-pagination-portfolio",
+			clickable: true,
+		},
+
+		breakpoints: {
+			0: {
+				slidesPerView: 1,
+			},
+			768: {
+				slidesPerView: "auto",
+				spaceBetween: 20,
+				navigation: {
+					nextEl: ".swiper-button-next",
+					prevEl: ".swiper-button-prev",
+				},
+			},
+		},
+	});
+
+	function goToPageP(numberPage) {
+		swiperPortfolio.slideTo(numberPage, 1000, false);
+	}
+
+	var buttonPrevP = $("#portfolio-slider .swiper-button-prev");
+	var buttonNextP = $("#portfolio-slider .swiper-button-next");
+	buttonNextP.on("click", function () {
+		if (buttonNextP.hasClass("swiper-button-disabled")) {
+			buttonNextP
+				.queue(function (next) {
+					buttonNextP.addClass("rotate").dequeue();
+				})
+				.delay(400)
+				.queue(function (next) {
+					buttonNextP.hide().removeClass("rotate");
+					buttonPrevP.show().dequeue();
+				});
+		}
+	});
+	buttonPrevP.on("click", function () {
+		goToPageP(0);
+		buttonPrevP
+			.queue(function (next) {
+				buttonPrevP.addClass("rotate").dequeue();
+			})
+			.delay(400)
+			.queue(function (next) {
+				buttonPrevP.hide().removeClass("rotate");
+				buttonNextP.show().dequeue();
+			});
 	});
 
 	/* ------ Gestione immagine visore -------- */
