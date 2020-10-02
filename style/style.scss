@@ -506,3 +506,192 @@ section#chiSono {
 		}
 	}
 }
+
+section#section-competenze {
+	.int {
+		padding-top: 50px;
+		padding-bottom: 50px;
+		@include media-breakpoint-down(sm) {
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+	}
+	.titolo {
+		margin-bottom: 20px;
+	}
+	.blocchi {
+		.blocco {
+			cursor: pointer;
+			margin-bottom: 20px;
+			.int-blocco {
+				position: relative;
+				.image {
+					position: relative;
+					z-index: 1;
+					display: block;
+					overflow: hidden;
+					img {
+						height: 350px;
+						width: 100%;
+						object-fit: cover;
+						object-position: center center;
+					}
+					&::before {
+						content: "";
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						z-index: 2;
+						background-color: $primary-dark;
+						opacity: 0.8;
+					}
+					&::after {
+						content: "";
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: calc(100% + 20px);
+
+						border-bottom: 530px solid $primary-dark;
+						border-right: 100px solid transparent;
+						transform: translateX(-60%);
+						opacity: 0.8;
+						z-index: 4;
+						@include tra-five();
+					}
+				}
+				.text {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					z-index: 4;
+					.titolo,
+					.contenuto {
+						padding: 30px;
+						@include media-breakpoint-down(sm) {
+							padding: 20px;
+						}
+					}
+					.titolo {
+						padding-bottom: 10px;
+						h2 {
+							margin-bottom: 0;
+						}
+						i {
+							margin-bottom: 10px;
+						}
+					}
+					.contenuto {
+						padding-top: 0;
+						.blocco-icone {
+							display: none;
+							.icone {
+								flex: 1;
+							}
+						}
+					}
+					text-align: center;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					h2,
+					p,
+					i {
+						color: white;
+					}
+					i {
+						@include rfs(65px);
+						margin-bottom: 20px;
+					}
+				}
+			}
+			&:hover .image::after {
+				transform: translateX(0);
+			}
+			&.open {
+				.image {
+					&::after {
+						transform: translate(-20px);
+					}
+				}
+				.text {
+					justify-content: flex-start;
+					.titolo {
+						@include tra-five();
+						display: flex;
+						align-items: center;
+						background-color: rgba(47, 49, 49, 0.8);
+						padding-bottom: 30px;
+						@include media-breakpoint-down(sm) {
+							padding-bottom: 20px;
+						}
+						i {
+							@include rfs(40px);
+							margin-right: 20px;
+							margin-bottom: 0;
+						}
+					}
+					.contenuto {
+						padding-top: 10px;
+						.icone {
+							display: flex;
+							flex: 1;
+							flex-wrap: wrap;
+							.icona {
+								margin: 15px 5px;
+								width: 90px;
+								@include media-breakpoint-down(md) {
+									width: 60px;
+									margin: 10px 5px;
+								}
+								i,
+								small {
+									display: block;
+									color: white;
+									margin: 0;
+								}
+								i {
+									@include rfs(50px);
+								}
+								img {
+									height: 45px;
+									margin-bottom: 5px;
+								}
+							}
+						}
+					}
+					p {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+section#section-portfolio {
+	.int {
+		padding-top: 50px;
+		padding-bottom: 50px;
+		@include media-breakpoint-down(sm) {
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+		.lavori {
+			#portfolio-slider {
+				.swiper-slide {
+					.image {
+						img {
+							width: 480px;
+							height: auto;
+						}
+					}
+				}
+			}
+		}
+	}
+}

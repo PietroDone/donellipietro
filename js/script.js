@@ -1,4 +1,4 @@
-$(document).ready(function () {
+e$(document).ready(function () {
 	/* ------ Gestione scorrimento sezioni -------- */
 
 	const appHeight = () => {
@@ -17,7 +17,7 @@ $(document).ready(function () {
 		scrollOverflowReset: true,
 		paddingTop: "80px",
 		fixedElements: ".main-menu",
-		anchors: ["home", "chi-sono", "competenze", "lavori", "contattami"],
+		anchors: ["home", "chi-sono", "competenze", "portfolio", "contattami"],
 	});
 
 	/* ------ Gestione slider Chi Sono -------- */
@@ -99,6 +99,33 @@ $(document).ready(function () {
 			pietro.css("height", h_i + "px").css("width", "auto");
 			image.css("border-color", "blue");
 		}
+	});
+
+	/* ------ Gestione blocchi competenze -------- */
+	$(".competenza").on("click", function () {
+		if ($(this).hasClass("open")) {
+			$(this)
+				.find(".blocco-icone")
+				.fadeOut()
+				.delay(100)
+				.queue(function (next) {
+					$(".competenza").removeClass("open");
+					next();
+				});
+		} else {
+			$(this).toggleClass("open");
+			$(this).find(".blocco-icone").slideToggle();
+		}
+	});
+	$(".competenza").on("mouseleave", function () {
+		$(this)
+			.find(".blocco-icone")
+			.fadeOut()
+			.delay(100)
+			.queue(function (next) {
+				$(".competenza").removeClass("open");
+				next();
+			});
 	});
 
 	/* ------ Gestione menu -------- */
