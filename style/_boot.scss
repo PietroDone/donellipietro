@@ -57,8 +57,8 @@ $pagination-active-border-color: $secondary;
 $input-height: 60px;
 
 // Color
-$input-color: #777777;
-$input-placeholder-color: lighten($text-color, 30%);
+$input-color: lighten($text-color, 30%);
+$input-placeholder-color: #777777;
 $input-plaintext-color: lighten($text-color, 30%);
 
 // Checkbox

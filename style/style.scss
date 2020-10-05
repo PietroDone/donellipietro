@@ -794,3 +794,32 @@ section#section-portfolio {
 		}
 	}
 }
+
+footer#section-contattami {
+	.int {
+		padding-top: 50px;
+		padding-bottom: 50px;
+		@include media-breakpoint-down(sm) {
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+
+		.form-contattami {
+			textarea {
+				height: 150px;
+			}
+			@include media-breakpoint-down(sm) {
+				.custom-control {
+					display: flex;
+					justify-content: flex-start;
+					align-items: center;
+					label.custom-control-label {
+						line-height: 1;
+						transform: translateY(2px);
+						border-bottom: 0 !important;
+					}
+				}
+			}
+		}
+	}
+}

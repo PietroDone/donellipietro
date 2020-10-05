@@ -58,6 +58,7 @@
 				</div>
 			</div>
 		</nav>
+
 		<div class="page" id="fullpage">
 			<header class="section" data-anchor="home">
 				<div class="container-fluid full-hero">
@@ -489,15 +490,73 @@
 				</div>
 			</section>
 
-			<footer class="section" data-anchor="contattami">
+			<section class="section" id="section-contattami" data-anchor="contattami">
 				<div class="container-fluid">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-12">footer</div>
+					<div class="container int">
+						<div class="row titolo">
+							<div class="col-md-12">
+								<h1 class="titolo-sottolineato">Contattami</h1>
+							</div>
+						</div>
+						<div class="row form-contattami">
+							<div class="col-md-12">
+								<form>
+									<div class="form-group">
+										<label for="name">Nome e Cognome</label>
+										<input
+											type="name"
+											class="form-control"
+											id="nome"
+											aria-describedby="nome"
+											placeholder="Inserisci Nome e Cognome"
+										/>
+									</div>
+									<div class="form-group">
+										<label for="mail">Indirizzo mail</label>
+										<input
+											type="email"
+											class="form-control"
+											id="mail"
+											aria-describedby="mail"
+											placeholder="Inserisci la tua mail"
+										/>
+									</div>
+									<div class="form-group">
+										<label for="telefono">Numero di Telefono</label>
+										<input
+											type="telefono"
+											class="form-control"
+											id="telefono"
+											aria-describedby="telefono"
+											placeholder="Inserisci il tuo Numero di telefono"
+										/>
+									</div>
+									<div class="form-group">
+										<label for="messaggio">Messaggio</label>
+										<textarea
+											class="form-control"
+											id="messaggio"
+											aria-describedby="messaggio"
+											placeholder="Lasciami un messaggio"
+										></textarea>
+									</div>
+									<div class="form-group">
+										<div class="custom-control custom-checkbox">
+											<input type="checkbox" class="custom-control-input" id="privacy" />
+											<label class="custom-control-label" for="privacy"
+												>Accetto i termini e le condizioni di
+												<a href="./">Privacy Policy</a></label
+											>
+											<!--Manca privacy policy-->
+										</div>
+										<button type="submit" class="btn btn-primary">Invia Richiesta</button>
+									</div>
+								</form>
+							</div>
 						</div>
 					</div>
 				</div>
-			</footer>
+			</section>
 		</div>
 
 		<script src="js/jquery-3.3.1.min.js"></script>
