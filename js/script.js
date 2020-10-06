@@ -85,6 +85,9 @@ $(document).ready(function () {
 
 	var swiperPortfolio = new Swiper("#portfolio-slider", {
 		keyboard: true,
+		preloadImages: false,
+		lazy: true,
+		watchSlidesVisibility: true,
 		pagination: {
 			el: ".swiper-pagination-portfolio",
 			clickable: true,

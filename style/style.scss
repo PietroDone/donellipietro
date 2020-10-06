@@ -743,6 +743,7 @@ section#section-portfolio {
 						z-index: 2;
 						@include tra-five();
 					}
+					.swiper-lazy,
 					img {
 						width: 480px;
 						max-width: 100%;
