@@ -62,7 +62,7 @@ $input-placeholder-color: #777777;
 $input-plaintext-color: lighten($text-color, 30%);
 
 // Checkbox
-$checkbox-bg-color: transparent;
+$checkbox-bg-color: $secondary;
 $checkbox-checked-bg-color: $primary;
 $checkbox-border-color: $primary;
 $checkbox-checked-border-color: $primary;

@@ -163,28 +163,16 @@ $(document).ready(function () {
 	/* ------ Gestione blocchi competenze -------- */
 	$(".competenza").on("click", function () {
 		if ($(this).hasClass("open")) {
-			$(this)
-				.find(".blocco-icone")
-				.fadeOut()
-				.delay(100)
-				.queue(function (next) {
-					$(".competenza").removeClass("open");
-					next();
-				});
+			$(this).removeClass("open").find(".blocco-icone").hide();
 		} else {
-			$(this).toggleClass("open");
-			$(this).find(".blocco-icone").slideToggle();
+			$(".competenza.open").not(this).removeClass("open").find(".blocco-icone").hide();
+			$(this).addClass("open").find(".blocco-icone").slideDown();
 		}
 	});
 	$(".competenza").on("mouseleave", function () {
-		$(this)
-			.find(".blocco-icone")
-			.fadeOut()
-			.delay(100)
-			.queue(function (next) {
-				$(".competenza").removeClass("open");
-				next();
-			});
+		if ($(window).width() >= 768) {
+			$(this).removeClass("open").find(".blocco-icone").hide();
+		}
 	});
 
 	/* ------ Gestione menu -------- */
@@ -212,23 +200,23 @@ $(document).ready(function () {
 		removeShadow();
 		$(".hamburger").removeClass("is-active");
 		$(".barra-menu").removeClass("menu-open");
-		if (screen && screen.width < 768) {
-			$(".main-menu .inline-menu").slideUp();
+		if ($(window).width() < 768) {
+			$("#menu").fadeOut();
 		}
 	}
-	$(".main-menu .inline-menu li").on("click", function () {
+	$("#menu li").on("click", function () {
 		chiudiMenu();
 	});
-	var barraMenu = $(".main-menu");
+
 	$(window).on("load resize scroll", function () {
 		/* Chiusura menu al resize */
 		chiudiMenu();
 
 		/* Gestione apparizione menu */
-		if (screen && screen.width >= 768) {
-			$(".main-menu .inline-menu").slideDown();
+		if ($(window).width() >= 768) {
+			$("#menu").slideDown();
 		} else {
-			$(".main-menu .inline-menu").slideUp();
+			$("#menu").fadeOut();
 		}
 	});
 

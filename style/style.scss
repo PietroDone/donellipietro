@@ -75,7 +75,7 @@ $hBarra: 80px;
 		.dx {
 			display: flex;
 			align-items: center;
-			.inline-menu {
+			#menu {
 				list-style: none;
 				margin: 0;
 				padding: 0;
@@ -519,7 +519,7 @@ section#section-competenze {
 		padding-bottom: 50px;
 		@include media-breakpoint-down(sm) {
 			padding-top: 20px;
-			padding-bottom: 20px;
+			padding-bottom: 30px;
 		}
 	}
 	.titolo {
@@ -596,7 +596,33 @@ section#section-competenze {
 						.blocco-icone {
 							display: none;
 							.icone {
+								display: flex;
 								flex: 1;
+								flex-wrap: wrap;
+								.icona {
+									margin: 15px 5px;
+									width: 90px;
+									@include media-breakpoint-down(md) {
+										width: 60px;
+										margin: 10px 5px;
+									}
+									i,
+									small {
+										display: block;
+										color: white;
+										margin: 0;
+									}
+									i {
+										font-size: 50px;
+										@include media-breakpoint-down(sm) {
+											font-size: 40px;
+										}
+									}
+									img {
+										height: 45px;
+										margin-bottom: 5px;
+									}
+								}
 							}
 						}
 					}
@@ -643,32 +669,6 @@ section#section-competenze {
 					}
 					.contenuto {
 						padding-top: 10px;
-						.icone {
-							display: flex;
-							flex: 1;
-							flex-wrap: wrap;
-							.icona {
-								margin: 15px 5px;
-								width: 90px;
-								@include media-breakpoint-down(md) {
-									width: 60px;
-									margin: 10px 5px;
-								}
-								i,
-								small {
-									display: block;
-									color: white;
-									margin: 0;
-								}
-								i {
-									@include rfs(50px);
-								}
-								img {
-									height: 45px;
-									margin-bottom: 5px;
-								}
-							}
-						}
 					}
 					p {
 						display: none;
@@ -809,11 +809,10 @@ section#section-contattami {
 			textarea {
 				height: 150px;
 			}
-			@include media-breakpoint-down(sm) {
-				.custom-control {
-					label.custom-control-label {
-						line-height: 1;
-					}
+			.custom-control-label {
+				text-transform: initial !important;
+				@include media-breakpoint-down(sm) {
+					line-height: 1.3;
 				}
 			}
 		}

@@ -83,6 +83,7 @@ form {
 			float: right;
 			margin-top: 20px;
 		}
+
 		.custom-checkbox label {
 			font-size: $font-small;
 			line-height: 35px;
@@ -108,11 +109,13 @@ form {
 		.custom-control-input:checked ~ .custom-control-label::before {
 			background-color: $checkbox-checked-bg-color;
 			border-color: $checkbox-checked-border-color;
-			background-image: none;
+			//background-image: none;
 		}
+		/*
 		.custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
-			background-image: none;
+			//background-image: none;
 		}
+		*/
 	}
 }
 
