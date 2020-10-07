@@ -702,8 +702,25 @@ section#section-portfolio {
 	}
 }
 
+#form-messages {
+	display: none;
+	position: fixed;
+	top: 100px;
+	right: 30px;
+	border-radius: 5px;
+	z-index: 10;
+	&.alert-danger::before {
+		content: "\f321";
+		font-family: "Font Awesome 5 Pro";
+		font-weight: 300;
+		margin-right: 10px;
+	}
+}
+
 section#section-portfolio {
+	position: relative;
 	.int {
+		position: relative;
 		padding-top: 50px;
 		padding-bottom: 50px;
 		@include media-breakpoint-down(sm) {
@@ -805,9 +822,9 @@ section#section-contattami {
 			padding-bottom: 20px;
 		}
 
-		.form-contattami {
-			textarea {
-				height: 150px;
+		#form-contattami {
+			textarea#message {
+				height: 150px !important;
 			}
 			@include media-breakpoint-down(sm) {
 				.custom-control {

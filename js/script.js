@@ -16,7 +16,7 @@ $(document).ready(function () {
 		scrollOverflow: true,
 		scrollOverflowReset: true,
 		paddingTop: "80px",
-		fixedElements: ".main-menu",
+		fixedElements: ".main-menu, #form-message",
 		anchors: ["home", "chi-sono", "competenze", "portfolio", "contattami"],
 	});
 
@@ -246,5 +246,60 @@ $(document).ready(function () {
 		} else {
 			apriMenu();
 		}
+	});
+
+	/* Gestione mail */
+
+	var form = $("#form-contattami");
+	var formMessages = $("#form-messages");
+
+	function message(type, msgText) {
+		formMessages
+			.removeClass()
+			.addClass("alert " + type)
+			.slideDown()
+			.delay(5000)
+			.fadeOut();
+		$(formMessages).text(msgText);
+	}
+
+	function checkPrivacy() {
+		if ($("#privacy").is(":checked")) {
+			return true;
+		} else {
+			message("alert-danger", "Per inviare è necessario acconsentire al trattamento dei dati.");
+			return false;
+		}
+	}
+
+	$(form).submit(function (event) {
+		// Blocco la chiamata diretta alla pagina mailer.php
+		event.preventDefault();
+		// Controllo che la privacy sia ok
+		if (!checkPrivacy()) return false;
+		// Raccolgo i dati
+		var formData = $(form).serialize();
+		console.log("ci sono");
+		// Chiamata ajax
+		$.ajax({
+			type: "POST",
+			url: $(form).attr("action"),
+			data: formData,
+		})
+			.done(function (response) {
+				message("alert-success", response);
+
+				$("#name").val("");
+				$("#email").val("");
+				$("#message").val("");
+			})
+			.fail(function (data) {
+				if (data.responseText !== "") {
+					msgText = data.responseText;
+				} else {
+					msgText = "Oops! C'è stato un errore, il messaggio non può essere inviato.";
+				}
+				message("alert-danger", msgText);
+			});
 	});
 });
