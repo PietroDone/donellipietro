@@ -128,10 +128,14 @@ $hBarra: 80px;
 					display: none !important;
 				}
 			}
-			img {
+			.logo-main {
 				align-self: flex-start;
 				margin-top: 10px;
-				width: 100px;
+				width: 110px;
+				a,
+				img {
+					width: 100%;
+				}
 				@include tra-five();
 				@include media-breakpoint-down(sm) {
 					width: 50px;
@@ -194,7 +198,7 @@ $hBarra: 80px;
 	}
 	&.fixed {
 		.sx {
-			img {
+			.logo-main {
 				margin-top: 0;
 				width: 50px;
 				//position: static;
