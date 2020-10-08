@@ -800,8 +800,9 @@ section#section-portfolio {
 						bottom: 10px;
 						left: 10px;
 						z-index: 4;
-						&.pd-logo {
-							content: "";
+						&.dp-logo {
+							width: 45px;
+							content: url("../img/dp.svg");
 							filter: drop-shadow(0 0 10px $secondary);
 							&:hover {
 								filter: drop-shadow(0 0 6px $secondary-dark);
