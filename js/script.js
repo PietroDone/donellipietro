@@ -18,6 +18,17 @@ $(document).ready(function () {
 		paddingTop: "80px",
 		fixedElements: ".main-menu",
 		anchors: ["home", "chi-sono", "competenze", "portfolio", "contattami"],
+
+		onLeave: function (origin, destination, direction) {
+			if (origin.index == 0 && direction == "down") {
+				$(".main-menu").addClass("fixed");
+			}
+		},
+		afterLoad: function (origin, destination, direction) {
+			if (destination.index == 0) {
+				$(".main-menu").removeClass("fixed");
+			}
+		},
 	});
 
 	/* ------ Gestione slider Chi Sono -------- */

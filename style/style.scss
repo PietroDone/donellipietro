@@ -57,18 +57,29 @@ $hBarra: 80px;
 	top: 0;
 	left: 0;
 	width: 100%;
-	&.dark {
-		background-color: $secondary-extra-dark;
-	}
 	.int {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		height: $hBarra;
 		.sx {
+			position: relative;
+			display: flex;
+			align-items: center;
+			overflow-y: visible;
+			max-height: 50px;
 			.hamburger {
 				@include media-breakpoint-up(md) {
 					display: none !important;
+				}
+			}
+			img {
+				align-self: flex-start;
+				margin-top: 10px;
+				width: 100px;
+				@include tra-five();
+				@include media-breakpoint-down(sm) {
+					display: none;
 				}
 			}
 		}
@@ -115,6 +126,16 @@ $hBarra: 80px;
 						margin-top: 25px;
 					}
 				}
+			}
+		}
+	}
+	&.fixed {
+		.sx {
+			img {
+				margin-top: 0;
+				width: 50px;
+				//position: static;
+				@include tra-five();
 			}
 		}
 	}
@@ -245,15 +266,27 @@ section#chiSono {
 			}
 		}
 		.dx {
-			padding-right: 80px;
+			padding-right: 40px;
+			padding-left: 40px;
 			@include media-breakpoint-down(md) {
 				padding-right: 10px;
+				padding-left: 10px;
 			}
 			.bottoni {
-				margin-top: 20px;
+				margin-top: 30px;
 				display: flex;
 				align-items: flex-start;
 				flex-wrap: wrap;
+				a {
+					margin-right: 20px;
+					color: $primary;
+					&:hover {
+						color: white;
+					}
+					i {
+						font-size: 30px;
+					}
+				}
 				.btn:first-child() {
 					margin-right: 15px;
 					margin-bottom: 15px;
@@ -529,6 +562,14 @@ section#section-competenze {
 		.blocco {
 			cursor: pointer;
 			margin-bottom: 20px;
+			&.blue {
+				.image::before {
+					background-color: rgb(25, 140, 178) !important;
+				}
+				.image::after {
+					border-bottom-color: rgb(25, 140, 178) !important;
+				}
+			}
 			.int-blocco {
 				position: relative;
 				.image {
@@ -611,6 +652,10 @@ section#section-competenze {
 										display: block;
 										color: white;
 										margin: 0;
+									}
+									small {
+										line-height: 1;
+										margin-top: 10px;
 									}
 									i {
 										font-size: 50px;
@@ -749,16 +794,25 @@ section#section-portfolio {
 						max-width: 100%;
 						height: auto;
 					}
-					.ueppy-logo {
+					.logo {
 						position: absolute;
 						width: 70px;
 						bottom: 10px;
 						left: 10px;
 						z-index: 4;
-						content: url("../img/ueppy-credits-orange-white.svg");
-						filter: drop-shadow(0 0 10px $secondary);
-						&:hover {
-							filter: drop-shadow(0 0 6px $secondary-dark);
+						&.pd-logo {
+							content: "";
+							filter: drop-shadow(0 0 10px $secondary);
+							&:hover {
+								filter: drop-shadow(0 0 6px $secondary-dark);
+							}
+						}
+						&.ueppy-logo {
+							content: url("../img/ueppy-credits-orange-white.svg");
+							filter: drop-shadow(0 0 10px $secondary);
+							&:hover {
+								filter: drop-shadow(0 0 6px $secondary-dark);
+							}
 						}
 					}
 					.text {
