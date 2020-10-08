@@ -1,3 +1,12 @@
+$(window).on("load", function () {
+	$(".loading")
+		.fadeOut()
+		.delay(200)
+		.dequeue(function () {
+			$(".loading").fadeOut().remove();
+		});
+});
+
 $(document).ready(function () {
 	/* ------ Gestione scorrimento sezioni -------- */
 
