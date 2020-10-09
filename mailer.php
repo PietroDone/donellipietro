@@ -9,10 +9,10 @@
         $message = trim($_POST["message"]);
 
         // Check that data was sent to the mailer.
-        if ( empty($name) OR empty($message) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        if ( empty($name) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
             // Set a 400 (bad request) response code and exit.
             http_response_code(400);
-            echo "Oops! There was a problem with your submission. Please complete the form and try again.";
+            echo "Oops! Si è verificato un problema con l'invio. Completa il form e riprovaci. (Nome ed email sono obbligatori)";
             exit;
         }
 
@@ -21,12 +21,12 @@
         $recipient = "pietro.donelli99@gmail.com";
 
         // Set the email subject.
-        $subject = "New contact from $name";
+        $subject = "Nuovo contatto da $name";
 
         // Build the email content.
-        $email_content = "Name: $name\n";
+        $email_content = "Nome: $name\n";
         $email_content .= "Email: $email\n\n";
-        $email_content .= "Message:\n$message\n";
+        $email_content .= "Meggaggio:\n$message\n";
 
         // Build the email headers.
         $email_headers = "From: $name <$email>";

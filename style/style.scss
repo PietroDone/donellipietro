@@ -842,6 +842,8 @@ section#section-portfolio {
 	top: 100px;
 	right: 30px;
 	border-radius: 5px;
+	width: 400px;
+	max-width: 90%;
 	z-index: 10;
 	&.alert-danger::before {
 		content: "\f321";

@@ -265,9 +265,9 @@ $(document).ready(function () {
 		formMessages
 			.removeClass()
 			.addClass("alert " + type)
-			.slideDown();
-		//.delay(5000)
-		//.fadeOut();
+			.slideDown()
+			.delay(5000)
+			.fadeOut();
 		$(formMessages).text(msgText);
 	}
 
