@@ -257,9 +257,9 @@ $(document).ready(function () {
 		formMessages
 			.removeClass()
 			.addClass("alert " + type)
-			.slideDown()
-			.delay(5000)
-			.fadeOut();
+			.slideDown();
+		//.delay(5000)
+		//.fadeOut();
 		$(formMessages).text(msgText);
 	}
 
@@ -279,7 +279,6 @@ $(document).ready(function () {
 		if (!checkPrivacy()) return false;
 		// Raccolgo i dati
 		var formData = $(form).serialize();
-		console.log("ci sono");
 		// Chiamata ajax
 		$.ajax({
 			type: "POST",
