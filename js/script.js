@@ -19,7 +19,7 @@ $(document).ready(function () {
 
 	$("#fullpage").fullpage({
 		//options here
-		menu: "#menu",
+		menu: "#menu .inline-menu",
 		autoScrolling: true,
 		scrollHorizontally: true,
 		scrollOverflow: true,
@@ -214,7 +214,7 @@ $(document).ready(function () {
 		addShadow();
 		$(".hamburger").addClass("is-active");
 		$(".barra-menu").addClass("menu-open");
-		$(".main-menu .inline-menu").slideDown();
+		$("#menu").slideDown();
 	}
 	function chiudiMenu() {
 		removeShadow();
@@ -224,7 +224,7 @@ $(document).ready(function () {
 			$("#menu").fadeOut();
 		}
 	}
-	$("#menu li").on("click", function () {
+	$("#menu li, #menu .btn").on("click", function () {
 		chiudiMenu();
 	});
 
