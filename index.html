@@ -73,6 +73,8 @@
 			</div>
 		</nav>
 
+		<div id="form-messages" class="alert" role="alert"></div>
+
 		<div class="page" id="fullpage">
 			<header class="section" data-anchor="home">
 				<div class="container-fluid full-hero">
@@ -698,58 +700,55 @@
 								<h1 class="titolo-sottolineato">Contattami</h1>
 							</div>
 						</div>
-						<div class="row form-contattami">
+						<div class="row">
 							<div class="col-md-12">
-								<form>
+								<form id="form-contattami" method="POST" action="mailer.php">
 									<div class="form-group">
 										<label for="name">Nome e Cognome</label>
 										<input
-											type="name"
+											type="text"
 											class="form-control"
-											id="nome"
-											aria-describedby="nome"
+											id="name"
+											name="name"
 											placeholder="Inserisci Nome e Cognome"
 										/>
 									</div>
 									<div class="form-group">
-										<label for="mail">Indirizzo mail</label>
+										<label for="email">Indirizzo mail</label>
 										<input
 											type="email"
 											class="form-control"
-											id="mail"
-											aria-describedby="mail"
+											id="email"
+											name="email"
 											placeholder="Inserisci la tua mail"
 										/>
 									</div>
 									<div class="form-group">
-										<label for="telefono">Numero di Telefono</label>
-										<input
-											type="telefono"
-											class="form-control"
-											id="telefono"
-											aria-describedby="telefono"
-											placeholder="Inserisci il tuo Numero di telefono"
-										/>
-									</div>
-									<div class="form-group">
-										<label for="messaggio">Messaggio</label>
+										<label for="message">Messaggio</label>
 										<textarea
 											class="form-control"
-											id="messaggio"
-											aria-describedby="messaggio"
+											id="message"
+											name="message"
 											placeholder="Lasciami un messaggio"
 										></textarea>
 									</div>
 									<div class="form-group">
 										<div class="custom-control custom-checkbox">
-											<input type="checkbox" class="custom-control-input" id="privacy" />
+											<input
+												type="checkbox"
+												class="custom-control-input"
+												id="privacy"
+												name="privacy"
+											/>
 											<label class="custom-control-label" for="privacy"
 												>Accetto i termini e le condizioni di
 												<a href="./">Privacy Policy</a></label
 											>
 											<!--Manca privacy policy-->
 										</div>
-										<button type="submit" class="btn btn-primary">Invia Richiesta</button>
+										<button type="submit" id="submit" class="btn btn-primary">
+											Invia Richiesta
+										</button>
 									</div>
 								</form>
 							</div>
@@ -757,6 +756,7 @@
 					</div>
 				</div>
 			</section>
+
 			<footer class="container-fluid section fp-auto-height" data-anchor="footer">
 				<div class="container">
 					<div class="row">
