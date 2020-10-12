@@ -28,6 +28,8 @@ $(document).ready(function () {
 		fixedElements: ".main-menu, #form-message",
 		anchors: ["home", "chi-sono", "competenze", "portfolio", "contattami"],
 
+		responsiveWidth: 768,
+
 		onLeave: function (origin, destination, direction) {
 			if (origin.index == 0 && direction == "down") {
 				$(".main-menu").addClass("fixed");
@@ -42,28 +44,47 @@ $(document).ready(function () {
 
 	/* ------ Gestione slider Chi Sono -------- */
 
-	var swiperChiSono = new Swiper("#chiSono-slider", {
-		keyboard: true,
-		pagination: {
-			el: ".swiper-pagination-chiSono",
-			clickable: true,
-		},
+	const breakpoint = window.matchMedia("(max-width:768px)");
 
-		breakpoints: {
-			0: {
-				autoHeight: true,
-				slidesPerView: 1,
+	let swiperChiSono;
+
+	const breakpointChecker = function () {
+		if (breakpoint.matches === true) {
+			if (swiperChiSono !== undefined) swiperChiSono.destroy(true, true);
+			return;
+		} else if (breakpoint.matches === false) {
+			return enableSwiper();
+		}
+	};
+
+	const enableSwiper = function () {
+		swiperChiSono = new Swiper("#chiSono-slider", {
+			keyboard: true,
+			pagination: {
+				el: ".swiper-pagination-chiSono",
+				clickable: true,
 			},
-			768: {
-				slidesPerView: "auto",
-				spaceBetween: 50,
-				navigation: {
-					nextEl: ".swiper-button-next",
-					prevEl: ".swiper-button-prev",
+
+			breakpoints: {
+				0: {
+					autoHeight: true,
+					slidesPerView: 1,
+				},
+				768: {
+					slidesPerView: "auto",
+					spaceBetween: 50,
+					navigation: {
+						nextEl: ".swiper-button-next",
+						prevEl: ".swiper-button-prev",
+					},
 				},
 			},
-		},
-	});
+		});
+	};
+
+	breakpoint.addListener(breakpointChecker);
+
+	breakpointChecker();
 
 	function goToPageCS(numberPage) {
 		swiperChiSono.slideTo(numberPage, 1000, false);

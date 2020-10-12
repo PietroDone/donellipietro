@@ -17,6 +17,12 @@ body {
 	overflow-y: hidden;
 }
 
+.fp-responsive,
+.fp-responsive .fp-slide,
+.fp-responsive .fp-tableCell {
+	height: auto !important;
+}
+
 @keyframes loading-loop {
 	0% {
 		transform: translate(55px, -50px);
@@ -212,13 +218,15 @@ $hBarra: 80px;
 					}
 					.btn {
 						margin-left: 0;
-						margin-top: 20px;
+						margin-top: 30px;
 					}
 				}
 			}
 		}
 	}
 	&.fixed {
+		background-color: $secondary-extra-dark;
+		@include tra-five();
 		.sx {
 			.logo-main {
 				margin-top: 0;
@@ -309,9 +317,6 @@ header {
 	}
 }
 
-header {
-	//display: none;
-}
 .titolo-sottolineato {
 	position: relative;
 	margin-bottom: 40px;
@@ -346,7 +351,6 @@ header {
 
 section#chiSono {
 	#about-me {
-		//display: none;
 		width: 85%;
 		@include media-breakpoint-down(sm) {
 			width: 85%;
@@ -380,10 +384,8 @@ section#chiSono {
 					margin-right: 15px;
 					margin-bottom: 15px;
 				}
-				@include media-breakpoint-down(md) {
-					.contattami {
-						display: none;
-					}
+				@include media-breakpoint-down(sm) {
+					border: 1px solid $primary;
 				}
 			}
 		}
@@ -473,6 +475,9 @@ section#chiSono {
 	}
 	#passioni {
 		width: 100%;
+		@include media-breakpoint-down(sm) {
+			padding-bottom: 30px;
+		}
 		.lightgallery {
 			position: relative;
 			margin-top: 20px;
@@ -489,6 +494,10 @@ section#chiSono {
 						display: block;
 					}
 					@include media-breakpoint-down(sm) {
+						margin: 7px 2.5px;
+						&:last-child() {
+							margin-bottom: 2.5px;
+						}
 						&.no-mobile {
 							display: none;
 						}
@@ -553,6 +562,19 @@ section#chiSono {
 					width: 100% !important;
 					align-items: flex-start;
 				}
+			}
+		}
+		@include media-breakpoint-down(sm) {
+			.swiper-wrapper {
+				width: 100%;
+				display: flex;
+				flex-wrap: wrap;
+				.swiper-slide {
+					width: 100%;
+				}
+			}
+			.swiper-pagination {
+				display: none;
 			}
 		}
 	}
@@ -636,12 +658,13 @@ section#chiSono {
 }
 
 section#section-competenze {
+	background-color: $secondary-dark;
 	.int {
 		padding-top: 50px;
 		padding-bottom: 50px;
 		@include media-breakpoint-down(sm) {
 			padding-top: 20px;
-			padding-bottom: 30px;
+			padding-bottom: 0;
 		}
 	}
 	.titolo {
@@ -819,7 +842,7 @@ section#section-portfolio {
 		padding-bottom: 50px;
 		@include media-breakpoint-down(sm) {
 			padding-top: 20px;
-			padding-bottom: 20px;
+			padding-bottom: 0;
 		}
 		.lavori {
 			#portfolio-slider {
@@ -830,6 +853,9 @@ section#section-portfolio {
 							height: auto;
 						}
 					}
+				}
+				.swiper-pagination {
+					margin-top: 20px !important;
 				}
 			}
 		}
@@ -861,7 +887,7 @@ section#section-portfolio {
 		padding-bottom: 50px;
 		@include media-breakpoint-down(sm) {
 			padding-top: 20px;
-			padding-bottom: 20px;
+			padding-bottom: 0;
 		}
 		.lavori {
 			#portfolio-slider {
@@ -965,7 +991,7 @@ section#section-contattami {
 		padding-bottom: 50px;
 		@include media-breakpoint-down(sm) {
 			padding-top: 20px;
-			padding-bottom: 20px;
+			padding-bottom: 60px;
 		}
 
 		#form-contattami {

@@ -92,7 +92,7 @@ form {
 			cursor: pointer;
 			&::before {
 				background-color: $checkbox-bg-color;
-				border: 1px solid $checkbox-border-color;
+				border: 1px solid $checkbox-border-color !important;
 				width: 25px;
 				height: 25px;
 			}
