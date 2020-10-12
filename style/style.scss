@@ -1039,9 +1039,13 @@ section#section-contattami {
 }
 
 footer {
-	margin-top: 30px;
-	padding-top: 30px !important;
-	padding-bottom: 30px;
+	margin-top: 20px;
+	padding-top: 20px !important;
+	padding-bottom: 20px;
+	@include media-breakpoint-down(sm) {
+		padding-bottom: 30px;
+		// Per padding top vadi eccezioni a inizio file
+	}
 	background-color: $secondary-extra-dark;
 	.int {
 		display: flex;
