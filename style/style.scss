@@ -23,6 +23,16 @@ body {
 	height: auto !important;
 }
 
+.fp-responsive .fp-section {
+	padding-top: 18px !important;
+}
+.fp-responsive header.fp-section {
+	padding-top: 80px !important;
+}
+.fp-responsive footer.fp-section {
+	padding-top: 30px !important;
+}
+
 @keyframes loading-loop {
 	0% {
 		transform: translate(55px, -50px);
@@ -350,6 +360,9 @@ header {
 }
 
 section#chiSono {
+	@include media-breakpoint-down(sm) {
+		padding-bottom: 20px;
+	}
 	#about-me {
 		width: 85%;
 		@include media-breakpoint-down(sm) {
@@ -385,7 +398,13 @@ section#chiSono {
 					margin-bottom: 15px;
 				}
 				@include media-breakpoint-down(sm) {
-					border: 1px solid $primary;
+					border: 1px solid rgba(247, 176, 49, 0.2);
+					padding: 10px 20px;
+					justify-content: center;
+					align-items: center;
+					a:last-child() {
+						margin-right: 0;
+					}
 				}
 			}
 		}
@@ -475,9 +494,7 @@ section#chiSono {
 	}
 	#passioni {
 		width: 100%;
-		@include media-breakpoint-down(sm) {
-			padding-bottom: 30px;
-		}
+
 		.lightgallery {
 			position: relative;
 			margin-top: 20px;
@@ -546,6 +563,14 @@ section#chiSono {
 			.swiper-slide {
 				.row {
 					width: 100%;
+					@include media-breakpoint-down(sm) {
+						margin-left: 0;
+						.col-md-12,
+						.col-md-7.dx {
+							padding-left: 0 !important;
+							padding-right: 0;
+						}
+					}
 				}
 				&:last-child() {
 					margin-right: 0 !important;
@@ -664,7 +689,7 @@ section#section-competenze {
 		padding-bottom: 50px;
 		@include media-breakpoint-down(sm) {
 			padding-top: 20px;
-			padding-bottom: 0;
+			padding-bottom: 40px;
 		}
 	}
 	.titolo {
@@ -674,6 +699,11 @@ section#section-competenze {
 		.blocco {
 			cursor: pointer;
 			margin-bottom: 20px;
+			@include media-breakpoint-down(sm) {
+				&:last-child() {
+					margin-bottom: 0;
+				}
+			}
 			&.blue {
 				.image::before {
 					background-color: rgb(25, 140, 178) !important;
@@ -990,8 +1020,8 @@ section#section-contattami {
 		padding-top: 50px;
 		padding-bottom: 50px;
 		@include media-breakpoint-down(sm) {
-			padding-top: 20px;
-			padding-bottom: 60px;
+			padding-top: 0;
+			padding-bottom: 10px;
 		}
 
 		#form-contattami {
@@ -1010,8 +1040,8 @@ section#section-contattami {
 
 footer {
 	margin-top: 30px;
-	padding-top: 20px !important;
-	padding-bottom: 20px;
+	padding-top: 30px !important;
+	padding-bottom: 30px;
 	background-color: $secondary-extra-dark;
 	.int {
 		display: flex;
